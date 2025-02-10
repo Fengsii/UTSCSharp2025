@@ -1,8 +1,11 @@
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using UTS_Project_Efengsi_Rahmanto_Zalukhu.Models;
+using UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO;
 using UTS_Project_Efengsi_Rahmanto_Zalukhu.Services;
+using UTS_Project_Efengsi_Rahmanto_Zalukhu.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +45,11 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("UserOnly", policy => policy.RequireRole("User"));
 });
+
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<IValidator<RegisterRequestDTO>, ValidatorRegisterRequest>();
+builder.Services.AddScoped<IValidator<LoginRequestDTO>, ValidatorLoginRequest>();
 
 ////////////////////////////////
 

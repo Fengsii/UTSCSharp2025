@@ -11,5 +11,6 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Models
         }
         public virtual DbSet<Produk> Produks { get; set; }
         public virtual DbSet<Pesanan> Pesanans { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

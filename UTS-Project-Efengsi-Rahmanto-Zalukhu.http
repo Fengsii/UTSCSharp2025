@@ -1,0 +1,6 @@
+@UTS_Project_Efengsi_Rahmanto_Zalukhu_HostAddress = http://localhost:5224
+
+GET {{UTS_Project_Efengsi_Rahmanto_Zalukhu_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

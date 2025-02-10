@@ -1,0 +1,181 @@
+[
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.PesananController",
+    "Method": "Get",
+    "RelativePath": "api/Pesanan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.PesananController",
+    "Method": "Delete",
+    "RelativePath": "api/Pesanan/DeletePesananById/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.PesananController",
+    "Method": "GetPesananById",
+    "RelativePath": "api/Pesanan/GetPesananById/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.PesananController",
+    "Method": "Post",
+    "RelativePath": "api/Pesanan/InserDataPesanan",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datareq",
+        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.PesananRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.PesananController",
+    "Method": "Put",
+    "RelativePath": "api/Pesanan/UpdateDataPesanan",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "datareq",
+        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.PesananRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.ProdukController",
+    "Method": "Get",
+    "RelativePath": "api/Produk",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.ProdukController",
+    "Method": "Delete",
+    "RelativePath": "api/Produk/DeleteProdukById/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.ProdukController",
+    "Method": "GetProdukById",
+    "RelativePath": "api/Produk/GetProdukById/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.ProdukController",
+    "Method": "Post",
+    "RelativePath": "api/Produk/InserDataProduk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "datareq",
+        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.ProdukRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.ProdukController",
+    "Method": "Put",
+    "RelativePath": "api/Produk/UpdateDataProduk",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "datareq",
+        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.ProdukRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[UTS_Project_Efengsi_Rahmanto_Zalukhu.WeatherForecast, UTS-Project-Efengsi-Rahmanto-Zalukhu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

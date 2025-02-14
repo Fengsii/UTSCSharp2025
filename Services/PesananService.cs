@@ -85,17 +85,22 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Services
             }
         }
 
-        public bool UpdatePesanan(int id, PesananRequestDTO product)
+        public bool UpdatePesanan(int id, PesananRequestDTO pesanan)
         {
             try
             {
+                if (!CheckIDProduk(pesanan.IdProduk))
+                {
+                    return false;
+                }
+
                 var existingProduct = _context.Pesanans.FirstOrDefault(x => x.Id == id);
                 if (existingProduct != null)
                 {
-                    existingProduct.NamePembeli = product.NamePembeli;
-                    existingProduct.AlamatPembeli = product.AlamatPembeli;
-                    existingProduct.IdProduk = product.IdProduk;
-                    existingProduct.JumlaH = product.JumlaH;
+                    existingProduct.NamePembeli = pesanan.NamePembeli;
+                    existingProduct.AlamatPembeli = pesanan.AlamatPembeli;
+                    existingProduct.IdProduk = pesanan.IdProduk;
+                    existingProduct.JumlaH = pesanan.JumlaH;
                     existingProduct.TanggalPesanan = DateTime.Now;
        
 

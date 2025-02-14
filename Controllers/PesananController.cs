@@ -178,6 +178,22 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
 
                 if (_validation.IsValid)
                 {
+                    // Cek apakah produk yang dipesan ada dalam database
+                    if (!_PesananService.CheckIDProduk(datareq.IdProduk))
+                    {
+                        var responProdukTidakAda = new GeneralResponse
+                        {
+                            StatusCode = "02",
+                            Statusdesc = "Produk yang dipesan tidak tersedia dalam database.",
+                            Data = null
+                        };
+
+                        return BadRequest(responProdukTidakAda);
+                    }
+
+
+
+
                     var dataUpdate = _PesananService.UpdatePesanan(Id, datareq);
                     if (dataUpdate)
                     {

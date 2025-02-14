@@ -11,44 +11,42 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Validators
        
         public ValidatorRequestPesanan()
         {
-            //RuleFor(x => x.Name).NotEmpty().MinimumLength(5).WithMessage("Name is not valid!");
-            //RuleFor(x => x.Telephone).NotEmpty().MinimumLength(10).MaximumLength(13).Must(ValidAttack).WithMessage("Attack must be numeric!");
+            RuleFor(x => x.NamePembeli)
+               .NotEmpty()
+               .MinimumLength(3)
+               .MaximumLength(50)
+               .Must(ValidLettersOnly)
+               .WithMessage("Name must contain only letters, be between 3-50 characters");
 
-            RuleFor(x => x.NamePembeli).NotEmpty().MinimumLength(5).Must(ValidLettersOnly).WithMessage("Name must contain only letters and be at least 5 characters long!");
-            //RuleFor(x => x.NamePembeli).NotEmpty().Must(ValidAlphanumeric).WithMessage("Name must contain only letters and numbers!");
 
-          
-        }
-
-        // Validasi untuk memastikan hanya angka
-        public bool ValidAttack(string attack)
-        {
-            string regexNumberOnly = @"^\d+$";
-            if (Regex.IsMatch(attack, regexNumberOnly))
+            RuleFor(x => x.AlamatPembeli)
+            .Must((instance, value) =>
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    instance.AlamatPembeli = "Bandung";
+                }
                 return true;
-            else
-                return false;
+            });
+
+            RuleFor(x => x.JumlaH)
+               .NotEmpty()
+               .GreaterThan(0)
+               .LessThanOrEqualTo(1000)
+               .WithMessage("Quantity must be between 1-1000");
+
         }
 
-        // Validasi untuk memastikan hanya huruf
-        public bool ValidLettersOnly(string nameSup)
+        private bool ValidLettersOnly(string name)
         {
-            string regexLettersOnly = @"^[a-zA-Z\s]+$"; // Regex untuk memastikan hanya huruf (termasuk spasi)
-            return Regex.IsMatch(nameSup, regexLettersOnly);
+            if (string.IsNullOrEmpty(name)) return false;
+            string regexLettersOnly = @"^[a-zA-Z\s]+$";
+            return Regex.IsMatch(name, regexLettersOnly);
         }
 
-        // Validasi untuk memastikan hanya angka dan huruf
-        public bool ValidAlphanumeric(string nameBrg)
-        {
-            string regexAlphanumeric = @"^[a-zA-Z0-9\s]+$"; // Regex untuk memastikan hanya angka dan huruf (termasuk spasi)
-            return Regex.IsMatch(nameBrg, regexAlphanumeric);
-        }
 
-        //Validasi Hanya Angka
-        public bool ValidNumberOnly(string value)
-        {
-            string regexNumberOnly = @"^\d+$";
-            return Regex.IsMatch(value, regexNumberOnly);
-        }
+
+
+
     }
 }

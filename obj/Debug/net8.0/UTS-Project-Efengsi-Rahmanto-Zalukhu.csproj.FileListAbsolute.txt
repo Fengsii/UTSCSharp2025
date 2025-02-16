@@ -150,3 +150,5 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukh
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.pdb
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.genruntimeconfig.cache
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\ref\UTS-Project-Efengsi-Rahmanto-Zalukhu.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

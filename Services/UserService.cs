@@ -11,158 +11,82 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Services
             _context = context;
         }
 
-        //public bool Register(string username, string email, string password, string role)
-        //{
-        //    if (_context.Users.Any(u => u.Username == username || u.Email == email))
-        //        return false;
-
-        //    var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-
-        //    var user = new User
-        //    {
-        //        Username = username,
-        //        Email = email,
-        //        PasswordHash = hashedPassword,
-        //        Role = role,
-        //        CreatedAt = DateTime.UtcNow
-        //    };
-
-        //    _context.Users.Add(user);
-        //    _context.SaveChanges();
-
-        //    return true;
-        //}
-
-        //public bool Register(string username, string email, string password, string role)
-        //{
-        //    try
-        //    {
-        //        // Cek apakah username atau email sudah ada
-        //        if (_context.Users.Any(u => u.Username == username || u.Email == email))
-        //        {
-        //            return false; // Username atau Email sudah ada
-        //        }
-
-        //        // Hash password menggunakan BCrypt
-        //        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-
-        //        var user = new User
-        //        {
-        //            Username = username ?? throw new ArgumentNullException(nameof(username)),
-        //            Email = email ?? throw new ArgumentNullException(nameof(email)),
-        //            PasswordHash = hashedPassword,
-        //            Role = role ?? "User", // Default role jika tidak disediakan
-        //            CreatedAt = DateTime.UtcNow
-        //        };
-
-        //        _context.Users.Add(user);
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.InnerException?.Message); // Debugging
-        //        return false;
-        //    }
-        //}
-
-
-        //public bool Register(string username, string email, string password, string role)
-        //{
-        //    try
-        //    {
-        //        Console.WriteLine($"Checking for existing user with username: {username} or email: {email}");
-
-        //        // Cek apakah username atau email sudah ada
-        //        if (_context.Users.Any(u => u.Username == username || u.Email == email))
-        //        {
-        //            Console.WriteLine("Duplicate username or email found.");
-        //            return false; // Username atau Email sudah ada
-        //        }
-
-        //        // Hash password menggunakan BCrypt
-        //        var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-
-        //        var user = new User
-        //        {
-        //            Username = username ?? throw new ArgumentNullException(nameof(username)),
-        //            Email = email ?? throw new ArgumentNullException(nameof(email)),
-        //            PasswordHash = hashedPassword,
-        //            Role = role ?? "User", // Default role jika tidak disediakan
-        //            CreatedAt = DateTime.UtcNow
-        //        };
-
-        //        _context.Users.Add(user);
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Error during registration: {ex.Message}");
-        //        return false;
-        //    }
-        //}
-
-
-
-
-        public bool Register(string username, string email, string password, string role)
+        public (bool Success, string Message) Register(string username, string email, string password, string role)
         {
             try
             {
-                // Cek apakah username atau email sudah ada
-                if (_context.Users.Any(u => u.Username == username || u.Email == email))
+                Console.WriteLine($"Attempting to register user: {username}, email: {email}");
+
+                // Cek database terlebih dahulu
+                var existingUser = _context.Users.FirstOrDefault(u =>
+                    u.Username.ToLower() == username.ToLower() ||
+                    u.Email.ToLower() == email.ToLower());
+
+                if (existingUser != null)
                 {
-                    return false; // Username atau Email sudah ada
+                    Console.WriteLine($"User exists - Username: {existingUser.Username}, Email: {existingUser.Email}");
+                    return (false, "Username atau email sudah terdaftar");
                 }
+
+
+
+
+
+
+                //// Cek username sudah ada atau belum
+                //if (_context.Users.Any(u => u.Username.ToLower() == username.ToLower()))
+                //{
+                //    return (false, "Username sudah digunakan");
+                //}
+
+                //// Cek email sudah ada atau belum
+                //if (_context.Users.Any(u => u.Email.ToLower() == email.ToLower()))
+                //{
+                //    return (false, "Email sudah terdaftar");
+                //}
 
                 // Hash password menggunakan BCrypt
                 var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
                 var user = new User
                 {
-                    Username = username ?? throw new ArgumentNullException(nameof(username)),
-                    Email = email ?? throw new ArgumentNullException(nameof(email)),
+                    //?? throw new ArgumentNullException(nameof(username)),
+                    // ?? throw new ArgumentNullException(nameof(email)),  ?? "User"
+                    Username = username,
+                    Email = email,
                     PasswordHash = hashedPassword,
-                    Role = role ?? "User", // Default role jika tidak disediakan
-                    CreatedAt = DateTime.UtcNow
+                    Role = role,
+                    CreatedAt = DateTime.UtcNow,
+                    RefreshTokenExpiryTime = DateTime.UtcNow
                 };
 
                 _context.Users.Add(user);
-                _context.SaveChanges(); // Simpan perubahan ke database
-                Console.WriteLine("User registered successfully.");
-                return true;
+                _context.SaveChanges();
+
+                return (true, "Registrasi berhasil");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error during registration: {ex.Message}");
-                return false;
+                return (false, $"Error during registration: {ex.Message}");
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public User Login(string username, string password)
+        public User? Login(string username, string password)
         {
             var user = _context.Users.FirstOrDefault(u => u.Username == username);
-
             if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 return null;
-
             return user;
+        }
+
+        public User? GetUserByUsername(string username)
+        {
+            return _context.Users.FirstOrDefault(u => u.Username == username);
+        }
+
+        public User? GetUserByRefreshToken(string refreshToken)
+        {
+            return _context.Users.FirstOrDefault(u => u.RefreshToken == refreshToken);
         }
 
         public bool UpdateUser(User user)

@@ -92,9 +92,10 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
             }
         }
 
-        // POST api/<WildAnimalsController>
+
+
         [HttpPost("InserDataProduk")]
-        public IActionResult Post(ProdukRequestDTO datareq)
+        public async Task<IActionResult> Post([FromForm] ProdukRequestDTO datareq)
         {
             try
             {
@@ -103,7 +104,7 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
 
                 if (_validation.IsValid)
                 {
-                    var data = _ProdukService.CreateProduk(datareq);
+                    var data = await _ProdukService.CreateProduk(datareq); // Panggil method async
                     if (data)
                     {
                         var responseSuccess = new GeneralResponse
@@ -119,10 +120,9 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
                     var responseFailed = new GeneralResponse
                     {
                         StatusCode = "02",
-                        Statusdesc = "Inser Produk Failed",
+                        Statusdesc = "Insert Produk Failed",
                         Data = null
                     };
-
 
                     return BadRequest(responseFailed);
                 }
@@ -136,7 +136,6 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
                     };
 
                     return BadRequest(responseFailed);
-
                 }
             }
             catch (Exception ex)
@@ -154,7 +153,7 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
 
 
         [HttpPut("UpdateDataProduk")]
-        public IActionResult Put(int Id, ProdukRequestDTO datareq)
+        public async Task<IActionResult> Put(int Id, [FromForm] ProdukRequestDTO datareq)
         {
             try
             {
@@ -163,7 +162,7 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
 
                 if (_validation.IsValid)
                 {
-                    var dataUpdate = _ProdukService.UpdateProduk(Id, datareq);
+                    var dataUpdate = await _ProdukService.UpdateProdukAsync(Id, datareq); // Panggil method async
                     if (dataUpdate)
                     {
                         var responseSuccess = new GeneralResponse
@@ -209,6 +208,132 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Controllers
                 return BadRequest(responseFailed);
             }
         }
+
+
+
+
+
+
+
+
+
+        //// POST api/<WildAnimalsController>
+        //[HttpPost("InserDataProduk")]
+        //public IActionResult Post(ProdukRequestDTO datareq)
+        //{
+        //    try
+        //    {
+        //        ValidatorRequestProduk request = new ValidatorRequestProduk();
+        //        _validation = request.Validate(datareq);
+
+        //        if (_validation.IsValid)
+        //        {
+        //            var data = _ProdukService.CreateProduk(datareq);
+        //            if (data)
+        //            {
+        //                var responseSuccess = new GeneralResponse
+        //                {
+        //                    StatusCode = "01",
+        //                    Statusdesc = "Insert Produk Success",
+        //                    Data = null
+        //                };
+
+        //                return Ok(responseSuccess);
+        //            }
+
+        //            var responseFailed = new GeneralResponse
+        //            {
+        //                StatusCode = "02",
+        //                Statusdesc = "Inser Produk Failed",
+        //                Data = null
+        //            };
+
+
+        //            return BadRequest(responseFailed);
+        //        }
+        //        else
+        //        {
+        //            var responseFailed = new GeneralResponse
+        //            {
+        //                StatusCode = "02",
+        //                Statusdesc = _validation.ToString(),
+        //                Data = null
+        //            };
+
+        //            return BadRequest(responseFailed);
+
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var responseFailed = new GeneralResponse
+        //        {
+        //            StatusCode = "99",
+        //            Statusdesc = "Failed | " + ex.Message.ToString(),
+        //            Data = null
+        //        };
+
+        //        return BadRequest(responseFailed);
+        //    }
+        //}
+
+
+        //[HttpPut("UpdateDataProduk")]
+        //public IActionResult Put(int Id, ProdukRequestDTO datareq)
+        //{
+        //    try
+        //    {
+        //        ValidatorRequestProduk request = new ValidatorRequestProduk();
+        //        _validation = request.Validate(datareq);
+
+        //        if (_validation.IsValid)
+        //        {
+        //            var dataUpdate = _ProdukService.UpdateProduk(Id, datareq);
+        //            if (dataUpdate)
+        //            {
+        //                var responseSuccess = new GeneralResponse
+        //                {
+        //                    StatusCode = "01",
+        //                    Statusdesc = "Update Produk Success",
+        //                    Data = null
+        //                };
+
+        //                return Ok(responseSuccess);
+        //            }
+
+        //            var responseFailed = new GeneralResponse
+        //            {
+        //                StatusCode = "02",
+        //                Statusdesc = "Update Produk Failed",
+        //                Data = null
+        //            };
+
+        //            return BadRequest(responseFailed);
+        //        }
+        //        else
+        //        {
+        //            var responseFailed = new GeneralResponse
+        //            {
+        //                StatusCode = "02",
+        //                Statusdesc = _validation.ToString(),
+        //                Data = null
+        //            };
+
+        //            return BadRequest(responseFailed);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var responseFailed = new GeneralResponse
+        //        {
+        //            StatusCode = "99",
+        //            Statusdesc = "Failed | " + ex.Message.ToString(),
+        //            Data = null
+        //        };
+
+        //        return BadRequest(responseFailed);
+        //    }
+        //}
 
 
 

@@ -100,12 +100,6 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukh
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets\msbuild.UTS-Project-Efengsi-Rahmanto-Zalukhu.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets\msbuild.UTS-Project-Efengsi-Rahmanto-Zalukhu.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets\msbuild.build.UTS-Project-Efengsi-Rahmanto-Zalukhu.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.UTS-Project-Efengsi-Rahmanto-Zalukhu.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.UTS-Project-Efengsi-Rahmanto-Zalukhu.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Proj.8A0E3BB4.Up2Date
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.dll
@@ -114,3 +108,14 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukh
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.genruntimeconfig.cache
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\ref\UTS-Project-Efengsi-Rahmanto-Zalukhu.dll
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.sourcelink.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\UTS-Project-Efengsi-Rahmanto-Zalukhu.staticwebassets.runtime.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\UTS-Project-Efengsi-Rahmanto-Zalukhu\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll

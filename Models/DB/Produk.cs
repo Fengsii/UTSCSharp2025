@@ -7,6 +7,7 @@
         public string Supplier {  get; set; }
         public DateTime TanggalKadalwarsa { get; set; }
         public decimal Harga { get; set; }
+        public string ImagePath { get; set; }
         public DateTime? CreateDate { get; set; }
     }
 }

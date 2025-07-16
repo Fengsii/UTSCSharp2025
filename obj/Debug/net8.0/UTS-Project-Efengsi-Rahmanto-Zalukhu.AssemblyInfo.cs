@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UTS-Project-Efengsi-Rahmanto-Zalukhu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18c0ad320a65b27c88c172b070c2de443c2429f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f8d33956f5bd88e4abba9a8034828154f96c3c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("UTS-Project-Efengsi-Rahmanto-Zalukhu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UTS-Project-Efengsi-Rahmanto-Zalukhu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -177,19 +177,46 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
+                "type": "object",
+                "properties": {
+                  "NameProduk": {
+                    "type": "string"
+                  },
+                  "Supplier": {
+                    "type": "string"
+                  },
+                  "TanggalKadalwarsa": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Harga": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ImageFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "NameProduk": {
+                  "style": "form"
+                },
+                "Supplier": {
+                  "style": "form"
+                },
+                "TanggalKadalwarsa": {
+                  "style": "form"
+                },
+                "Harga": {
+                  "style": "form"
+                },
+                "ImageFile": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -218,19 +245,46 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProdukRequestDTO"
+                "type": "object",
+                "properties": {
+                  "NameProduk": {
+                    "type": "string"
+                  },
+                  "Supplier": {
+                    "type": "string"
+                  },
+                  "TanggalKadalwarsa": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Harga": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ImageFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "NameProduk": {
+                  "style": "form"
+                },
+                "Supplier": {
+                  "style": "form"
+                },
+                "TanggalKadalwarsa": {
+                  "style": "form"
+                },
+                "Harga": {
+                  "style": "form"
+                },
+                "ImageFile": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -325,28 +379,6 @@
           "jumlaH": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProdukRequestDTO": {
-        "type": "object",
-        "properties": {
-          "nameProduk": {
-            "type": "string",
-            "nullable": true
-          },
-          "supplier": {
-            "type": "string",
-            "nullable": true
-          },
-          "tanggalKadalwarsa": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "harga": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false

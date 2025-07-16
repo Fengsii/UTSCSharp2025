@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\UTS-Project-Efengsi-Rahmanto-Zalukhu.props" />
-</Project>

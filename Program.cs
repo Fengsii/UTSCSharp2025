@@ -22,17 +22,20 @@ builder.Services.AddDbContext<ApplicationContext>(
 
 builder.Services.AddScoped<ProdukService>();
 builder.Services.AddScoped<PesananService>();
+// Tambahkan ini untuk mengakses wwwroot
+builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
 
-builder.Services.AddAuthentication("BasicAuthentication")
-    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+//builder.Services.AddAuthentication("BasicAuthentication")
+//    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
-builder.Services.AddAuthorization(options => {
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .AddAuthenticationSchemes("BasicAuthentication")
-        .Build();
-}
-);
+//builder.Services.AddAuthorization(options => {
+//    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+//        .RequireAuthenticatedUser()
+//        .AddAuthenticationSchemes("BasicAuthentication")
+//        .Build();
+//}
+//);
+
 
 
 
@@ -55,9 +58,26 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(options =>
+
+    options
+    .WithOrigins("http://localhost:5173", "https://localhost:5173") // Port Vite
+     .AllowAnyMethod()
+                   .AllowAnyHeader()
+        
+);
+
+// Aktifkan static files
+app.UseStaticFiles();
+
+//// Tambahkan setelah app.UseRouting() (kalau ada)
+//app.UseRouting();
+//app.UseCors("AllowFrontendLocalhost");
+
+
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
+//app.UseAuthentication();
 
 
 app.UseAuthorization();

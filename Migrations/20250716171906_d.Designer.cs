@@ -12,8 +12,8 @@ using UTS_Project_Efengsi_Rahmanto_Zalukhu.Models;
 namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250201072202_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20250716171906_d")]
+    partial class d
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,6 +69,10 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Migrations
                     b.Property<decimal>("Harga")
                         .HasColumnType("decimal(65,30)");
 
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("NameProduk")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -83,6 +87,28 @@ namespace UTS_Project_Efengsi_Rahmanto_Zalukhu.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Produks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateDate = new DateTime(2025, 7, 17, 0, 19, 6, 151, DateTimeKind.Local).AddTicks(2558),
+                            Harga = 100000m,
+                            ImagePath = "Images/Produk/aa.jpg",
+                            NameProduk = "Produk Sample 1",
+                            Supplier = "Supplier A",
+                            TanggalKadalwarsa = new DateTime(2026, 7, 17, 0, 19, 6, 151, DateTimeKind.Local).AddTicks(2540)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreateDate = new DateTime(2025, 7, 17, 0, 19, 6, 151, DateTimeKind.Local).AddTicks(2564),
+                            Harga = 150000m,
+                            ImagePath = "Images/Produk/aa.jpg",
+                            NameProduk = "Produk Sample 2",
+                            Supplier = "Supplier B",
+                            TanggalKadalwarsa = new DateTime(2027, 7, 17, 0, 19, 6, 151, DateTimeKind.Local).AddTicks(2562)
+                        });
                 });
 #pragma warning restore 612, 618
         }

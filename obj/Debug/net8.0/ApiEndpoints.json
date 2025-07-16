@@ -129,9 +129,29 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "datareq",
-        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.ProdukRequestDTO",
-        "IsRequired": true
+        "Name": "NameProduk",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Supplier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TanggalKadalwarsa",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harga",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -150,9 +170,29 @@
         "IsRequired": false
       },
       {
-        "Name": "datareq",
-        "Type": "UTS_Project_Efengsi_Rahmanto_Zalukhu.Models.DTO.ProdukRequestDTO",
-        "IsRequired": true
+        "Name": "NameProduk",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Supplier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "TanggalKadalwarsa",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Harga",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

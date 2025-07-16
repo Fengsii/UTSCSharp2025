@@ -6,5 +6,6 @@
         public string Supplier { get; set; }
         public DateTime TanggalKadalwarsa { get; set; }
         public decimal Harga { get; set; }
+        public IFormFile ImageFile { get; set; } // Untuk upload file
     }
 }
